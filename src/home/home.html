@@ -1,0 +1,25 @@
+<form action="">
+    <div class="col-sm-4 text-center s">
+        <p>
+            <label for="">search</label>
+            <input type="text" name="" id="" ng-model='search'>
+        </p>
+        <p>
+            <label for="">sort by:</label>
+            <select name="" id="" ng-model='order'>
+                <option value="">select</option>
+                <option value="name">Alphabetical</option>
+                <option value="-age">New</option>
+            </select>
+        </p>
+    </div>
+    <div class="col-sm-8">
+        <div class="col-sm-12 list down" ng-repeat='(index,item) in phoneData | filter:{name:search} | orderBy:order'>
+            <img alt="" ng-src="/static/{{item.imageUrl}}" class="col-sm-4 img ">
+            <div>
+                <p class="n" ng-model='name'><a href="#!/phoneDetail/{{item.id}}"> {{item.name}}</a></p>
+                <p class="d" ng-model='age'>{{item.snippet}}</p>
+            </div>
+        </div>
+    </div>
+</form>

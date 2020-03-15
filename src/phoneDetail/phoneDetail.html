@@ -1,0 +1,92 @@
+<div>
+    <div class="col-sm-12" id="head">
+        <div class="col-sm-3 div text-center">
+            <img alt="" ng-repeat='(index,k) in detail.images' ng-src="/static/{{k}}" class="big"  ng-show='target==k' ng-class="target==k?'enter': 'leave'">
+            <!-- <img alt="" ng-src="/static/{{img}}" src="/static/{{detail.images[0]}}"> -->
+        </div>
+        <div class="col-sm-7 col-sm-offset-2">
+            <h1 class="title">{{detail.name}}</h1>
+            <p class="desc">{{detail.description}}</p>
+            <img alt="" ng-repeat='(index,k) in detail.images' ng-src='/static/{{k}}' class="dimg"
+                ng-click='change(index)'>
+        </div>
+    </div>
+    <div class="col-sm-12">
+        <ul class="foot">
+            <li class="col-sm-1">
+                <h3>Availability and Networks</h3>
+                <!-- <p ng-repeat='a in detail.availability'>{{a}}</p> -->
+                <p>{{detail.availability[0]}}</p>
+            </li>
+            <li class="col-sm-1">
+                <h3>Battery</h3>
+                <div ng-repeat='(key,value) in detail.battery'>
+                    <h4>{{key}}</h4>
+                    <p>{{value}}</p>
+                </div>
+            </li>
+            <li class="col-sm-1">
+                <h3>Storage and Memory</h3>
+                <div ng-repeat='(key,value) in detail.storage'>
+                    <h4>{{key}}</h4>
+                    <p>{{value}}</p>
+                </div>
+            </li>
+            <li class="col-sm-1">
+                <h3>Connectivity</h3>
+                <div ng-repeat='(key,value) in detail.connectivity'>
+                    <h4>{{key}}</h4>
+                    <p>{{value ==true ? '√' : (value==false ? '×' : value)}}</p>
+                </div>
+            </li>
+            <li class="col-sm-1">
+                <h3>Android</h3>
+                <div ng-repeat='(key,value) in detail.android'>
+                    <h4>{{key == 'OS' ? 'OS Version' : key}}</h4>
+                    <p>{{value}}</p>
+                </div>
+            </li>
+            <li class="col-sm-2">
+                <h3>Size And Weight</h3>
+                <!-- <div ng-repeat='(key,value) in detail.sizeAndWeight'>
+                   <h4>{{key}}</h4>
+                   <p>{{value}}</p>
+                 </div> -->
+                <h4>Dimensions</h4>
+                <p ng-repeat='k in detail.sizeAndWeight.dimensions'>{{k}}</p>
+                <h4>Weight</h4>
+                <p>{{detail.sizeAndWeight.weight}}</p>
+            </li>
+            <li class="col-sm-2">
+                <h3>Display</h3>
+                <div ng-repeat='(key,value) in detail.display'>
+                    <h4>{{key}}</h4>
+                    <!-- <p>{{value == true ? '对' : (value == false ? '错' : value))}}</p> -->
+                    <p>{{value ==true ? '√' : (value==false ? '×' : value)}}</p>
+                </div>
+            </li>
+            <li class="col-sm-2">
+                <h3>Hardware</h3>
+                <div ng-repeat='(key,value) in detail.hardware'>
+                    <h4>{{key}}</h4>
+                    <p>{{value ==true ? '√' : (value==false ? '×' : value)}}</p>
+                </div>
+            </li>
+            <li class="col-sm-1">
+                <h3>Camera</h3>
+                <!-- <div ng-repeat='(key,value) in detail.camera'>
+                   <h4>{{key}}</h4>
+                   <p>{{value}}</p>
+                 </div> -->
+                <h4>Features</h4>
+                <p ng-repeat='k in detail.camera.features'>{{k}}</p>
+                <h4>Primary</h4>
+                <p>{{detail.camera.primary}}</p>
+            </li>
+            <li class="col-sm-12">
+                <h3>Additional Features</h3>`
+                <p>{{detail.additionalFeatures}}</p>
+            </li>
+        </ul>
+    </div>
+</div>
